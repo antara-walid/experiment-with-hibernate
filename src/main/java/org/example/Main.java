@@ -25,12 +25,17 @@ public class Main {
 
         try{
             entityManager.getTransaction().begin();
-            Student student = new Student();
-            student.setId(2L);
-            student.setName("world");
-
-            entityManager.persist(student);
+            Student student = entityManager.find(Student.class,1);
+            System.out.println(student);
             entityManager.getTransaction().commit();
+
+            // Operations
+            // entityManager.find() -> finds by pk(id) and add the the entity to the context form db
+            // entityManager.persist() -> add entity to the context
+            // entityManager.remove() -> mark entity for removal
+            // entityManager.merge() -> merge an entity outside the context to the context it uses the pk to do that
+            // entityManager.refresh() -> mirror the context from db
+            // entityManager.detach() -> remove entity from context so any change to it will not be reflected in db
         }catch (Exception ex)
         {
 
