@@ -10,6 +10,7 @@ import org.example.persistence.MyPersistenceUnitInfo;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -35,7 +36,8 @@ public class Main {
             student.setName("test");
             Address address = new Address();
             address.setStreet("123");
-            address.setStudent(student);
+
+            student.setAddresses(List.of(address));
 
 //            entityManager.persist(address);  // because we use cascade persist
             entityManager.persist(student);

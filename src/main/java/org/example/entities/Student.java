@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import org.example.generators.UUIDGenerator;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.List;
+
 @Entity
 public class Student {
     @Id
@@ -11,6 +13,20 @@ public class Student {
     private long id;
 
     private String name;
+
+
+    @OneToMany
+    @JoinColumn(name = "student_id") // in the case of oneToMany relationship the joinColumn must be used to avoid the creation of a join Table
+    private List<Address> addresses ;
+
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
 
     public Long getId() {
         return id;
