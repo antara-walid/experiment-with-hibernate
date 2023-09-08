@@ -10,7 +10,7 @@ public class Address {
     private Long id;
     private String street;
 
-    @OneToOne(mappedBy = "address")
+    @ManyToOne // many addresses for one student
     private Student student;
 
     public Student getStudent() {

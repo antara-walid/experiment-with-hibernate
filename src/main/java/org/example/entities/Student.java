@@ -5,24 +5,12 @@ import org.example.generators.UUIDGenerator;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name;
-
-    @OneToOne(cascade = CascadeType.PERSIST)
-    private Address address;
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 
     public Long getId() {
         return id;

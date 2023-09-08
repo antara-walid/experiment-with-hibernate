@@ -35,11 +35,11 @@ public class Main {
             student.setName("test");
             Address address = new Address();
             address.setStreet("123");
-            student.setAddress(address);
             address.setStudent(student);
 
 //            entityManager.persist(address);  // because we use cascade persist
             entityManager.persist(student);
+            entityManager.persist(address);
             entityManager.getTransaction().commit();
 
             // Operations
