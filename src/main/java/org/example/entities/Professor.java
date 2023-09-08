@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-@PrimaryKeyJoinColumn(name = "professor_id")
 public class Professor extends Person{
 
     private double salary;

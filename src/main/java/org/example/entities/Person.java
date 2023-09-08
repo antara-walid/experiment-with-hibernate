@@ -1,12 +1,14 @@
 package org.example.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person { // a table of person won t be created
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name="increment", strategy = "increment")
+    @GeneratedValue(generator = "increment")
     private long id;
 
     private String name;

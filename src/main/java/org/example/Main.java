@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import org.example.entities.Address;
+import org.example.entities.Person;
 import org.example.entities.Professor;
 import org.example.entities.Student;
 import org.example.persistence.MyPersistenceUnitInfo;
