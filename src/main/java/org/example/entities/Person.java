@@ -3,8 +3,7 @@ package org.example.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type_person",discriminatorType = DiscriminatorType.INTEGER)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person { // a table of person won t be created
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

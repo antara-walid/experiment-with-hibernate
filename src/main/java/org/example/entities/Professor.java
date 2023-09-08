@@ -3,9 +3,10 @@ package org.example.entities;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-@DiscriminatorValue("2")
+@PrimaryKeyJoinColumn(name = "professor_id")
 public class Professor extends Person{
 
     private double salary;

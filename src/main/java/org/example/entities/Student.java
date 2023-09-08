@@ -7,7 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import java.util.List;
 
 @Entity
-@DiscriminatorValue("1")
+@PrimaryKeyJoinColumn(name = "student_id")
 public class Student extends Person{
     private String cne;
 
