@@ -15,9 +15,8 @@ public class Student {
     private String name;
 
 
-    @OneToMany
-    @JoinColumn(name = "student_id") // in the case of oneToMany relationship the joinColumn must be used to avoid the creation of a join Table
-    private List<Address> addresses ;
+    @OneToMany(mappedBy = "student")
+    private List<Address> addresses;
 
 
     public List<Address> getAddresses() {
