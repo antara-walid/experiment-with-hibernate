@@ -12,17 +12,7 @@ public class Address {
     private Long id;
     private String street;
 
-    @ManyToMany
-    // you can use the @JoinTable annotation to specify more details about the join table
-    private List<Student> students; // many addresses to many students
 
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
 
     public Long getId() {
         return id;

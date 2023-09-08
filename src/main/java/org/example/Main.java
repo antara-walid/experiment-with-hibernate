@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import org.example.entities.Address;
+import org.example.entities.Professor;
 import org.example.entities.Student;
 import org.example.persistence.MyPersistenceUnitInfo;
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -34,14 +35,18 @@ public class Main {
             entityManager.getTransaction().begin();
             Student student = new Student();
             student.setName("test");
-            Address address = new Address();
-            address.setStreet("123");
-            address.setStudents(List.of(student));
-            student.setAddresses(List.of(address));
+            student.setCne("cne");
+
+            Professor professor = new Professor();
+            professor.setName("prof");
+            professor.setSalary(1232);
+
 
 //            entityManager.persist(address);  // because we use cascade persist
             entityManager.persist(student);
-            entityManager.persist(address);
+            entityManager.persist(professor);
+
+
             entityManager.getTransaction().commit();
 
             // Operations
