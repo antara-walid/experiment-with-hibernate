@@ -1,8 +1,10 @@
 package org.example;
 
+import com.mysql.cj.xdevapi.AddResult;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import org.example.entities.Address;
 import org.example.entities.Student;
 import org.example.persistence.MyPersistenceUnitInfo;
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -31,6 +33,11 @@ public class Main {
             entityManager.getTransaction().begin();
             Student student = new Student();
             student.setName("test");
+            Address address = new Address();
+            address.setStreet("123");
+            student.setAddress(address);
+
+            entityManager.persist(address);
             entityManager.persist(student);
             entityManager.getTransaction().commit();
 

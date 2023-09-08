@@ -1,27 +1,34 @@
 package org.example.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.example.generators.UUIDGenerator;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Table(name = "student")
 public class Student {
     @Id
-    @GenericGenerator(name="UUIDGenerator",type= UUIDGenerator.class)
-    @GeneratedValue(generator = "UUIDGenerator")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     private String name;
 
+    @OneToOne
+    private Address address;
 
-    public String getId() {
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
