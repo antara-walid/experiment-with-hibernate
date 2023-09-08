@@ -15,18 +15,6 @@ public class Student {
     private String name;
 
 
-    @OneToMany(mappedBy = "student")
-    private List<Address> addresses;
-
-
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
-    }
-
     public Long getId() {
         return id;
     }

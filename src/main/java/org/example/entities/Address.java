@@ -2,6 +2,8 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Address {
 
@@ -10,15 +12,16 @@ public class Address {
     private Long id;
     private String street;
 
-    @ManyToOne
-    private Student student;
+    @ManyToMany
+    // you can use the @JoinTable annotation to specify more details about the join table
+    private List<Student> students; // many addresses to many students
 
-    public Student getStudent() {
-        return student;
+    public List<Student> getStudents() {
+        return students;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
     public Long getId() {
