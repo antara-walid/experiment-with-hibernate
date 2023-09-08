@@ -14,6 +14,16 @@ public class Student {
 
     private String name;
 
+    @ManyToMany(mappedBy = "students")
+    private List<Address> addresses;
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
 
     public Long getId() {
         return id;

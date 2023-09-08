@@ -37,6 +37,7 @@ public class Main {
             Address address = new Address();
             address.setStreet("123");
             address.setStudents(List.of(student));
+            student.setAddresses(List.of(address));
 
 //            entityManager.persist(address);  // because we use cascade persist
             entityManager.persist(student);
