@@ -13,7 +13,7 @@ public class Student {
 
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Address address;
 
     public Address getAddress() {
